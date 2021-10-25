@@ -1,6 +1,6 @@
 # Tarea POO: Nominas
 
-![Screenshot](img\class_diagram.jpg)
+![Screenshot](./img/class_diagram.jpg)
 
 ## Ventajas y Desventajas de la implementación
 

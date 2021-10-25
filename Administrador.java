@@ -1,5 +1,5 @@
 public class Administrador extends Empleado {
-    public static int instanciasAdministrador = 0;
+    private static int instanciasAdministrador = 0;
     private double porcentajeCompensacion;
 
     public Administrador(String nombre, double numHorasTrabajadas) {
@@ -31,5 +31,9 @@ public class Administrador extends Empleado {
         double salarioConCompensacion = this.getSalario() * (1 + porcentajeCompensacion);
         setSalario(salarioConCompensacion);
         return salarioConCompensacion;
+    }
+
+    public static int getNumeroInstancias() {
+        return instanciasAdministrador;
     }
 }

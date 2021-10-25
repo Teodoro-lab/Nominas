@@ -86,6 +86,21 @@ public class main {
         return result;
     }
 
+    public static int calcularNumeroDeEmpleados(String type) {
+        int result;
+        switch (type) {
+        case "Administrador":
+            result = Administrador.getNumeroInstancias();
+            break;
+        case "Jornalero":
+            result = Jornalero.getNumeroInstancias();
+            break;
+        default:
+            result = calcularNumeroDeEmpleados("Administrador") + calcularNumeroDeEmpleados("Jornalero");
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
 
         empleados[0] = new Jornalero("Juan", 17, 2);
@@ -99,8 +114,18 @@ public class main {
         empleados[3].calcularSalario(90, 11);
 
         // Todo se puedecalcular utilizadno este método pasando el tipo de empleado
-        System.out.println(calcularNominaTotal(""));
-        System.out.println(calcularHorasTotales(""));
+
+        System.out.println("Nomina total de todos los empleados: " + calcularNominaTotal(""));
+        System.out.println("Numero de horas trabajadas por todos los empleados: " + calcularHorasTotales(""));
+        System.out.println("Numero de empleados" + calcularNumeroDeEmpleados(""));
+
+        System.out.println("\nNomina total de jornaleros: " + calcularNominaTotal("Jornalero"));
+        System.out.println("Horas trabajadas por jornaleros: " + calcularHorasTotales("Jornalero"));
+        System.out.println("Numero de jornaleros" + calcularNumeroDeEmpleados("Jornalero"));
+
+        System.out.println("\nNomina total de Administradores: " +calcularNominaTotal("Administrador"));
+        System.out.println("Horas trabajadas por Administradores: " +calcularHorasTotales("Administrador"));
+        System.out.println("Numero de Administradores" + calcularNumeroDeEmpleados("Administrador"));
 
         /*
          * ? UI

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class main {
     public static Empleado[] empleados = new Empleado[4];
 
     public static double getNominaEmpleados() {

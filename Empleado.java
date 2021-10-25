@@ -1,4 +1,6 @@
 public class Empleado {
+    public static int instanciasEmpleados = 0;
+
     private String nombre;
     private double salario;
     private double numHorasTrabajadas;

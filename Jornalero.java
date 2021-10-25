@@ -1,4 +1,5 @@
 public class Jornalero extends Empleado {
+    public static int instanciasJornaleros = 0;
     private double horasExtrasTrabajadas;
 
     public Jornalero(String nombre, double numeroDeHorasTrabajadas, double horasExtrasTrabajadas) {

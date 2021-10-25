@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class main {
+public class Main {
     public static Empleado[] empleados = new Empleado[4];
 
     public static double getNominaEmpleados() {
@@ -93,35 +93,40 @@ public class main {
         empleados[2] = new Jornalero("Sambo", 23, 4);
         empleados[3] = new Administrador("Johnson", 90);
 
-        empleados[0].calcularSalario(33, 12);
-        empleados[1].calcularSalario(43, 32);
+        empleados[0].calcularSalario(17, 12);
+        empleados[1].calcularSalario(67, 32);
         empleados[2].calcularSalario(23, 52);
-        empleados[3].calcularSalario(13, 11);
+        empleados[3].calcularSalario(90, 11);
 
-        Scanner sc = new Scanner(System.in);
-        String tipoEmpleado;
-        String opcion;
-        String cerrarApp;
-        while (true) {
-            System.out.println("Elija la opción deseada: Administrador/Jornalero");
-            tipoEmpleado = sc.nextLine();
+        // Todo se puedecalcular utilizadno este método pasando el tipo de empleado
+        System.out.println(calcularNominaTotal(""));
+        System.out.println(calcularHorasTotales(""));
 
-            System.out.println("Elija Horas & Nomina: ");
-            opcion = sc.nextLine();
-            if (opcion.equals("Nomina")) {
-                System.out.println(calcularNominaTotal(tipoEmpleado));
-            } else if (opcion.equals("Horas")) {
-                System.out.println(calcularHorasTotales(tipoEmpleado));
-            } else {
-                System.out.println("Ingrese una opcion valida");
-            }
+        /*
+         * ? UI
+         */
+        // Scanner sc = new Scanner(System.in);
+        // String tipoEmpleado;
+        // ng opcion;
+        // ng cerrarApp;
+        // while (true) {
+        // System.out.println("Elija la
 
-            System.out.println("Escriba 1 para terminar la ejecución");
-            cerrarApp = sc.nextLine();
-            if (cerrarApp.equals("1")) {
-                break;
-            }
-        }
+        // em.out.println("Elija Horas & Nomina: ");
+        // opcion = sc.nextLine();
+        // on.equals("Nomina")) {
+        // System.out.println(calcularNominaTotal(tipoEmpleado));
+        // f (opcion.equals("Horas")) {
+        // System.out.println(calcularHorasTotales(tipoEmpleado));
+        // } else {
+        //
+
+        // em.out.println("Escriba 1 para terminar la ejecución");
+        // arApp = sc.nextLine();
+        // cerrarApp.equals("1")) {
+        // break;
+        // }
+        // }
 
     }
 }

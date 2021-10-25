@@ -1,9 +1,10 @@
 public class Administrador extends Empleado {
-
+    public static int instanciasAdministrador = 0;
     private double porcentajeCompensacion;
 
     public Administrador(String nombre, double numHorasTrabajadas) {
         super(nombre, numHorasTrabajadas);
+
     }
 
     public void setPorcentaje(double porcentajeCompensacion) {

@@ -1,3 +1,5 @@
+package empleados;
+
 public class Jornalero extends Empleado {
     private static int instanciasJornalero = 0;
     private double horasExtrasTrabajadas;

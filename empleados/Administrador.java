@@ -1,3 +1,5 @@
+package empleados;
+
 public class Administrador extends Empleado {
     private static int instanciasAdministrador = 0;
     private double porcentajeCompensacion;

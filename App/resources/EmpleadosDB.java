@@ -6,8 +6,9 @@ public class EmpleadosDB {
     // empleados debería ser privado, pero para fines del problema lo haré publico
     public static Empleado[] empleados = new Empleado[100];
     private static int registros = 100;
+    private static int registrosUsados = 0;
 
-    private EmpleadosDB(){};
+    private EmpleadosDB(){}
 
     public static void add(Empleado empleado){
         for(int i = 0; i < registros; i++){
@@ -17,6 +18,11 @@ public class EmpleadosDB {
             }
         }
     }
+
+    public static int getUsedRegistros(){
+        return registrosUsados;
+    }
+
 
     public static Empleado get(int index){
         return empleados[index];

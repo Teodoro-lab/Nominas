@@ -33,7 +33,7 @@ public class Jornalero extends Empleado {
 
     @Override
     public String toString() {
-        return super.toString() + "\nHoras extras" + horasExtrasTrabajadas;
+        return super.toString() + "\nHoras extras: " + horasExtrasTrabajadas;
     }
 
     public static int getNumeroInstancias() {

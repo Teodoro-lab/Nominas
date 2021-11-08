@@ -1,4 +1,4 @@
-package empleados;
+package App.empleados;
 
 public class Empleado {
     private String nombre;

@@ -1,4 +1,4 @@
-package empleados;
+package App.empleados;
 
 public class Administrador extends Empleado {
     private static int instanciasAdministrador = 0;

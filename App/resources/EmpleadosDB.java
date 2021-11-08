@@ -1,6 +1,6 @@
-package Methods;
+package App.resources;
 
-import empleados.Empleado;
+import App.empleados.Empleado;
 
 public class EmpleadosDB {
     // empleados debería ser privado, pero para fines del problema lo haré publico

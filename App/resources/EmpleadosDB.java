@@ -3,7 +3,10 @@ package App.resources;
 import App.empleados.Empleado;
 
 public class EmpleadosDB {
-    // empleados debería ser privado, pero para fines del problema lo haré publico
+
+    // WARNING:
+    //      El array 'empleados' debería ser privado, pero para fines del problema lo haré publico
+
     public static Empleado[] empleados = new Empleado[100];
     private static int registros = 100;
     private static int registrosUsados = 0;

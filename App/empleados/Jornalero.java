@@ -3,6 +3,11 @@ package empleados;
 public class Jornalero extends Empleado {
     private static int instanciasJornalero = 0;
     private double horasExtrasTrabajadas;
+    private final int level = 2;
+
+    public int getLevel() {
+        return level;
+    }
 
     public Jornalero(String nombre, double numeroDeHorasTrabajadas, double horasExtrasTrabajadas) {
         super(nombre, numeroDeHorasTrabajadas);

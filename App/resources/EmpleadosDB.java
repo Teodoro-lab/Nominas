@@ -14,6 +14,7 @@ public class EmpleadosDB {
         for(int i = 0; i < registros; i++){
             if (empleados[i] == null){
                 empleados[i] = empleado;
+                EmpleadosDB.registrosUsados++;
                 return;
             }
         }
@@ -37,6 +38,7 @@ public class EmpleadosDB {
             return;
 
         empleados[index] = null;
+        EmpleadosDB.registrosUsados--;
         for (int i = index+1; i < registros; i++){
             if (empleados[index+1] != null) {
                 empleados[i - 1] = empleados[i];

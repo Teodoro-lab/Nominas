@@ -9,7 +9,9 @@ public class NominaAdministradores implements NominaStrategy {
     public double calculate(Empleado @NotNull [] empleados) {
         double nominaTotal = 0.0;
         for (Empleado empleado : empleados) {
-            if (empleado.getClass() == Administrador.class) {
+            if (empleado == null) break;
+
+            else if (empleado.getClass() == Administrador.class) {
                 nominaTotal += empleado.getSalario();
             }
         }

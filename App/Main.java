@@ -14,12 +14,11 @@ public class Main {
 
     public static void main(String[] args) {
 
+        EmpleadosDB.add(new Administrador("María", 43));
         EmpleadosDB.add(new Jornalero("Juan", 17, 2));
         EmpleadosDB.add(new Jornalero("Jacinto", 32, 3));
-        EmpleadosDB.add(new Jornalero("Johnson", 67, 5));
-
-        EmpleadosDB.add(new Administrador("María", 43));
         EmpleadosDB.add(new Administrador("Samuel", 52));
+        EmpleadosDB.add(new Jornalero("Johnson", 67, 5));
         EmpleadosDB.add(new Administrador("Adam", 90));
 
         //(int)(Math.random()*6+1)
@@ -31,7 +30,7 @@ public class Main {
         System.out.println(
                 "Nomina total: " + Nominas.calculate(new NominaEmpleados()) +
                 "\nNumero de laboradas (Empleados): " + Nominas.calculate(new HorasLaboradasEmpleados()) +
-                "\nTotal empleados: " + Jornalero.getNumeroInstancias() + Administrador.getNumeroInstancias() +
+                "\nTotal empleados: " + EmpleadosDB.getUsedRegistros() +
                 "\n"
         );
 
@@ -51,6 +50,7 @@ public class Main {
                 "\n"
         );
 
+        EmpleadosDB.sort(true);
         EmpleadosDB.show();
 
     }

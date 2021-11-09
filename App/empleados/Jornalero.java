@@ -5,10 +5,6 @@ public class Jornalero extends Empleado {
     private double horasExtrasTrabajadas;
     private final int level = 2;
 
-    public int getLevel() {
-        return level;
-    }
-
     public Jornalero(String nombre, double numeroDeHorasTrabajadas, double horasExtrasTrabajadas) {
         super(nombre, numeroDeHorasTrabajadas);
         this.horasExtrasTrabajadas = horasExtrasTrabajadas;

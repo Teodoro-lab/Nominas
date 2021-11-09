@@ -10,10 +10,6 @@ public class Administrador extends Empleado {
 
     }
 
-    public int getLevel() {
-        return level;
-    }
-
     public void setPorcentaje(double porcentajeCompensacion) {
         this.porcentajeCompensacion = porcentajeCompensacion;
     }

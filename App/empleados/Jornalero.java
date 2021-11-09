@@ -11,6 +11,10 @@ public class Jornalero extends Empleado {
         instanciasJornalero++;
     }
 
+    public int getLevel() {
+        return level;
+    }
+
     public double getHorasExtrasTrabajadas() {
         return horasExtrasTrabajadas;
     }
@@ -29,7 +33,7 @@ public class Jornalero extends Empleado {
 
     @Override
     public String toString() {
-        return super.toString() + "\nHoras extras: " + horasExtrasTrabajadas;
+        return "Puesto: Jornalero\n" + super.toString() + "\nHoras extras: " + horasExtrasTrabajadas;
     }
 
     public static int getNumeroInstancias() {

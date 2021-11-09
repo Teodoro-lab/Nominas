@@ -21,9 +21,8 @@ public class Main {
         EmpleadosDB.add(new Jornalero("Johnson", 67, 5));
         EmpleadosDB.add(new Administrador("Adam", 90));
 
-        //(int)(Math.random()*6+1)
         for (int index = 0; index < EmpleadosDB.getUsedRegistros(); index++) {
-            EmpleadosDB.get(index).calcularSalario(10 , 5);
+            EmpleadosDB.get(index).calcularSalario((int)(Math.random()*6+1) , (int)(Math.random()*6+1));
         }
 
         //-------------  Empleados  ------------------
@@ -44,13 +43,16 @@ public class Main {
 
         //-------------  Administradores  ------------------
         System.out.println(
-                "\nNomina total (Administratores): " + Nominas.calculate(new NominaAdministradores()) +
+                "Nomina total (Administratores): " + Nominas.calculate(new NominaAdministradores()) +
                 "\nHoras laboradas (Administradores): " + Nominas.calculate(new HorasLaboradasAdministradores()) +
                 "\nTotal Administradores: " + Administrador.getNumeroInstancias() +
                 "\n"
         );
 
-        EmpleadosDB.sort(true);
+
+        EmpleadosDB.sort(false);
+        EmpleadosDB.delete(0);
+        EmpleadosDB.delete(0);
         EmpleadosDB.show();
 
     }

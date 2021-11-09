@@ -4,7 +4,7 @@ public abstract class Empleado implements Comparable<Empleado>{
     private String nombre;
     private double salario;
     private double numHorasTrabajadas;
-    public final int level = 0;
+    private int level;
 
     public Empleado(String nombre, double numHorasTrabajadas) {
         this.nombre = nombre;

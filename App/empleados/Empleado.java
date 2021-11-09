@@ -58,11 +58,7 @@ public abstract class Empleado implements Comparable<Empleado>{
             if (this.getSalario() >= o.getSalario()){
                 return 1;
             }
-            else{
-                return 0;
-            }
-        } else {
-            return 0;
         }
+        return 0;
     }
 }

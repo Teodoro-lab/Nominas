@@ -1,6 +1,6 @@
 package App.empleados;
 
-public class Empleado {
+public abstract class Empleado implements Comparable<Empleado>{
     private String nombre;
     private double salario;
     private double numHorasTrabajadas;

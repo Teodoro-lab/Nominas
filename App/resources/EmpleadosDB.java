@@ -62,4 +62,27 @@ public class EmpleadosDB {
             System.out.println(empleado + "\n");
         }
     }
+
+    public static void sort(boolean ascending)
+    {
+        int n = registrosUsados;
+        for (int i = 0; i < n-1; i++)
+            for (int j = 0; j < n-i-1   ; j++){
+                if (ascending) {
+                    if(empleados[j].compareTo(empleados[j + 1]) != 0){
+                        // swap arr[j+1] and arr[j]
+                        Empleado temp = empleados[j];
+                        empleados[j] = empleados[j+1];
+                        empleados[j+1] = temp;
+                    }
+                } else{
+                    if(empleados[j].compareTo(empleados[j + 1]) == 0){
+                        // swap arr[j+1] and arr[j]
+                        Empleado temp = empleados[j];
+                        empleados[j] = empleados[j+1];
+                        empleados[j+1] = temp;
+                    }
+                }
+            }
+    }
 }

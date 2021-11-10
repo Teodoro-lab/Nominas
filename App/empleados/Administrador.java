@@ -1,12 +1,17 @@
-package empleados;
+package App.empleados;
 
 public class Administrador extends Empleado {
     private static int instanciasAdministrador = 0;
     private double porcentajeCompensacion;
+    private int level = 1;
 
     public Administrador(String nombre, double numHorasTrabajadas) {
         super(nombre, numHorasTrabajadas);
+        instanciasAdministrador++;
+    }
 
+    public int getLevel() {
+        return level;
     }
 
     public void setPorcentaje(double porcentajeCompensacion) {
@@ -19,7 +24,7 @@ public class Administrador extends Empleado {
 
     @Override
     public String toString() {
-        return super.toString() + "\nPorcentaje: " + this.porcentajeCompensacion;
+        return "Puesto: Administrador\n" + super.toString() + "\nPorcentaje: " + this.porcentajeCompensacion;
     }
 
     @Override

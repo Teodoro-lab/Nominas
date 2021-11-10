@@ -1,13 +1,18 @@
-package empleados;
+package App.empleados;
 
-public class Empleado {
+public abstract class Empleado implements Comparable<Empleado>{
     private String nombre;
     private double salario;
     private double numHorasTrabajadas;
+    private int level;
 
     public Empleado(String nombre, double numHorasTrabajadas) {
         this.nombre = nombre;
         this.numHorasTrabajadas = numHorasTrabajadas;
+    }
+
+    public int getLevel() {
+        return level;
     }
 
     public void setNombre(String nombre) {
@@ -45,4 +50,30 @@ public class Empleado {
         return salario;
     }
 
+    /*@Override
+    public int compareTo(Empleado o) {
+        if(this.getLevel() > o.getLevel()) {
+            return 1;
+        } else if (this.getLevel() == o.getLevel()) {
+            if (this.getSalario() >= o.getSalario()){
+                return 1;
+            }
+        }
+        return 0;
+    }*/
+
+    @Override
+    public int compareTo(Empleado o) {
+        if(this.getLevel() > o.getLevel()) {
+            return -1;
+        } else if (this.getLevel() == o.getLevel()) {
+            if (this.getSalario() > o.getSalario()) {
+                return -1;
+            }
+            else if (this.getSalario() == o.getSalario()) {
+                return 0;
+            }
+        }
+        return 1;
+    }
 }

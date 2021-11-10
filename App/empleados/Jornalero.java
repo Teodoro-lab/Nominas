@@ -1,13 +1,18 @@
-package empleados;
+package App.empleados;
 
 public class Jornalero extends Empleado {
     private static int instanciasJornalero = 0;
     private double horasExtrasTrabajadas;
+    private int level = 2;
 
     public Jornalero(String nombre, double numeroDeHorasTrabajadas, double horasExtrasTrabajadas) {
         super(nombre, numeroDeHorasTrabajadas);
         this.horasExtrasTrabajadas = horasExtrasTrabajadas;
         instanciasJornalero++;
+    }
+
+    public int getLevel() {
+        return level;
     }
 
     public double getHorasExtrasTrabajadas() {
@@ -28,7 +33,7 @@ public class Jornalero extends Empleado {
 
     @Override
     public String toString() {
-        return super.toString() + "\nHoras extras" + horasExtrasTrabajadas;
+        return "Puesto: Jornalero\n" + super.toString() + "\nHoras extras: " + horasExtrasTrabajadas;
     }
 
     public static int getNumeroInstancias() {

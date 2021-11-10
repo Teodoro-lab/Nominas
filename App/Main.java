@@ -10,6 +10,8 @@ import App.strategies.nominas.NominaAdministradores;
 import App.strategies.nominas.NominaEmpleados;
 import App.strategies.nominas.NominaJornaleros;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -20,6 +22,9 @@ public class Main {
         EmpleadosDB.add(new Administrador("Samuel", 52));
         EmpleadosDB.add(new Jornalero("Johnson", 67, 5));
         EmpleadosDB.add(new Administrador("Adam", 90));
+        EmpleadosDB.add(new Administrador("Adaly", 230));
+        EmpleadosDB.add(new Administrador("Francis", 40));
+        EmpleadosDB.add(new Jornalero("Guillermo", 23, 10));
 
         for (int index = 0; index < EmpleadosDB.getUsedRegistros(); index++) {
             EmpleadosDB.get(index).calcularSalario((int)(Math.random()*6+1) , (int)(Math.random()*6+1));
@@ -27,32 +32,33 @@ public class Main {
 
         //-------------  Empleados  ------------------
         System.out.println(
-                "Nomina total: " + Nominas.calculate(new NominaEmpleados()) +
-                "\nNumero de laboradas (Empleados): " + Nominas.calculate(new HorasLaboradasEmpleados()) +
-                "\nTotal empleados: " + EmpleadosDB.getUsedRegistros() +
-                "\n"
+                "Nomina total: " + Nominas.calculate(new NominaEmpleados()) + "\n" +
+                "Numero de laboradas (Empleados): " + Nominas.calculate(new HorasLaboradasEmpleados()) + "\n" +
+                "Total empleados: " + EmpleadosDB.getUsedRegistros() + "\n"
         );
 
         //-------------  Jornaleros  ------------------
         System.out.println(
-                "Nomina total  (jornaleros): " + Nominas.calculate(new NominaJornaleros()) +
-                "\nHoras laboradas (jornaleros): " + Nominas.calculate(new HorasLaboradasJornaleros()) +
-                "\nTotal Jornaleros: " +  Jornalero.getNumeroInstancias() +
-                "\n"
+                "Nomina total  (jornaleros): " + Nominas.calculate(new NominaJornaleros()) + "\n" +
+                "Horas laboradas (jornaleros): " + Nominas.calculate(new HorasLaboradasJornaleros()) + "\n" +
+                "Total Jornaleros: " +  Jornalero.getNumeroInstancias() + "\n"
         );
 
         //-------------  Administradores  ------------------
         System.out.println(
-                "Nomina total (Administratores): " + Nominas.calculate(new NominaAdministradores()) +
-                "\nHoras laboradas (Administradores): " + Nominas.calculate(new HorasLaboradasAdministradores()) +
-                "\nTotal Administradores: " + Administrador.getNumeroInstancias() +
-                "\n"
+                "Nomina total (Administratores): " + Nominas.calculate(new NominaAdministradores()) + "\n" +
+                "Horas laboradas (Administradores): " + Nominas.calculate(new HorasLaboradasAdministradores()) + "\n" +
+                "Total Administradores: " + Administrador.getNumeroInstancias() + "\n"
         );
 
 
-        EmpleadosDB.sort(false);
+        Arrays.sort(EmpleadosDB.empleados, 0, EmpleadosDB.getUsedRegistros());
         EmpleadosDB.delete(0);
         EmpleadosDB.delete(0);
+        EmpleadosDB.show();
+
+        System.out.println("---------- MY SORT -------------\n");
+        EmpleadosDB.BubbleSort(true);
         EmpleadosDB.show();
 
     }

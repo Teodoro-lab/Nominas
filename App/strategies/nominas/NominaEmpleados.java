@@ -2,10 +2,9 @@ package App.strategies.nominas;
 
 import App.empleados.Empleado;
 import App.strategies.NominaStrategy;
-import org.jetbrains.annotations.NotNull;
 
 public class NominaEmpleados implements NominaStrategy {
-    public double calculate(Empleado @NotNull [] empleados) {
+    public double calculate(Empleado[] empleados) {
         double nominaQuincenal = 0.0;
         for (Empleado empleado : empleados) {
             if (empleado == null) break;

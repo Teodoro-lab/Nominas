@@ -3,7 +3,7 @@ package App.empleados;
 public class Administrador extends Empleado {
     private static int instanciasAdministrador = 0;
     private double porcentajeCompensacion;
-    private final int level = 1;
+    private int level = 1;
 
     public Administrador(String nombre, double numHorasTrabajadas) {
         super(nombre, numHorasTrabajadas);

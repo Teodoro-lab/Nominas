@@ -9,7 +9,6 @@ public class HorasLaboradasAdministradores implements HorasLaboradasStrategy {
         double horasTotales = 0.0;
         for (Empleado empleado : empleados) {
             if (empleado == null) break;
-
             if (empleado.getClass() == Administrador.class) {
                 horasTotales += empleado.getNumHorasTrabajadas();
             }

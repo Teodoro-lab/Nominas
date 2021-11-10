@@ -12,6 +12,9 @@ public class HorasLaboradasEmpleados implements HorasLaboradasStrategy {
             if (empleado == null) break;
             if (empleado.getClass() == Administrador.class) {
                 horasTotales += empleado.getNumHorasTrabajadas();
+            }else if (empleado.getClass() == Jornalero.class) {
+                Jornalero jornalero = (Jornalero) empleado;
+                horasTotales += jornalero.getNumHorasTrabajadas() + jornalero.getHorasExtrasTrabajadas();
             }
         }
         return horasTotales;

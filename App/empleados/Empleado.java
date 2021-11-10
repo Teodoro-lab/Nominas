@@ -50,7 +50,7 @@ public abstract class Empleado implements Comparable<Empleado>{
         return salario;
     }
 
-    @Override
+    /*@Override
     public int compareTo(Empleado o) {
         if(this.getLevel() > o.getLevel()) {
             return 1;
@@ -60,5 +60,20 @@ public abstract class Empleado implements Comparable<Empleado>{
             }
         }
         return 0;
+    }*/
+
+    @Override
+    public int compareTo(Empleado o) {
+        if(this.getLevel() > o.getLevel()) {
+            return -1;
+        } else if (this.getLevel() == o.getLevel()) {
+            if (this.getSalario() > o.getSalario()) {
+                return -1;
+            }
+            else if (this.getSalario() == o.getSalario()) {
+                return 0;
+            }
+        }
+        return 1;
     }
 }

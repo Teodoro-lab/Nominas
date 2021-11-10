@@ -2,28 +2,28 @@
 
 El código se encuentra dentro de la carpeta App:
 
-App
-│   Main.java
-│   Nominas.java  -> This class make use of the strategies
+App <br />
+│   Main.java <br /> 
+│   Nominas.java  -> This class make use of the strategies <br />
+│ <br />
+├───empleados  <br />
+│       Administrador.java <br />
+│       Empleado.java <br />
+│       Jornalero.java <br />
 │
-├───empleados 
-│       Administrador.java
-│       Empleado.java
-│       Jornalero.java
-│
-├───resources
-│       EmpleadosDB.java  -> This class implements the CRUD
-│
-└───strategies  -> This folder contains the interfaces and the folders with its implementations
-    │   HorasLaboradasStrategy.java  -> interface
-    │   NominaStrategy.java  -> interface
-    │
-    ├───horasLaboradas  -> algorithms for calculating "horasEmpleadas" according to the type of employee
-    │       HorasLaboradasAdministradores.java
-    │       HorasLaboradasEmpleados.java
-    │       HorasLaboradasJornaleros.java
-    │
-    └───nominas  -> algorithms for calculating "nominas" according to the type of employee
-            NominaAdministradores.java
-            NominaEmpleados.java
-            NominaJornaleros.java
+├───resources <br />
+│       EmpleadosDB.java  -> This class implements the CRUD <br />
+│ <br />
+└───strategies  -> This folder contains the interfaces and the folders with its implementations <br />
+    │   HorasLaboradasStrategy.java  -> interface <br />
+    │   NominaStrategy.java  -> interface <br />
+    │ <br />
+    ├───horasLaboradas  -> algorithms for calculating "horasEmpleadas" according to the type of employee <br />
+    │       HorasLaboradasAdministradores.java <br />
+    │       HorasLaboradasEmpleados.java <br />
+    │       HorasLaboradasJornaleros.java <br />
+    │ <br />
+    └───nominas  -> algorithms for calculating "nominas" according to the type of employee <br />
+            NominaAdministradores.java <br />
+            NominaEmpleados.java <br />
+            NominaJornaleros.java <br />

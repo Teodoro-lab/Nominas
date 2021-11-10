@@ -1,7 +1,7 @@
 # Tarea POO: Nóminas -> Implementing comparable sort
 
 El código se encuentra dentro de la carpeta App:
-
+<pre>
 App <br />
 │   Main.java <br /> 
 │   Nominas.java  -> This class make use of the strategies <br />
@@ -27,3 +27,4 @@ App <br />
             NominaAdministradores.java <br />
             NominaEmpleados.java <br />
             NominaJornaleros.java <br />
+<pre>

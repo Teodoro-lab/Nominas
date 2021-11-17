@@ -3,10 +3,9 @@ package App.strategies.nominas;
 import App.empleados.Administrador;
 import App.empleados.Empleado;
 import App.strategies.NominaStrategy;
-import org.jetbrains.annotations.NotNull;
 
 public class NominaAdministradores implements NominaStrategy {
-    public double calculate(Empleado @NotNull [] empleados) {
+    public double calculate(Empleado[] empleados) {
         double nominaTotal = 0.0;
         for (Empleado empleado : empleados) {
             if (empleado == null) break;

@@ -6,8 +6,8 @@ public class Jornalero extends Empleado {
     // id's,
     private int level = 2;
 
-    public Jornalero(String nombre, double numeroDeHorasTrabajadas, double horasExtrasTrabajadas) {
-        super(nombre, numeroDeHorasTrabajadas);
+    public Jornalero( String nombre,String apellido, double numeroDeHorasTrabajadas, double horasExtrasTrabajadas) {
+        super(nombre,apellido, numeroDeHorasTrabajadas);
         this.horasExtrasTrabajadas = horasExtrasTrabajadas;
         instanciasJornalero++;
     }

@@ -24,7 +24,7 @@ public class AdministradorController {
         try{
             while (table.next()){
                 administrador = new Administrador(
-                        table.getInt("id"),
+                        1,
                         table.getString("nombre"),
                         table.getString("apellido"),
                         table.getInt("horasLaboradas")
@@ -35,6 +35,17 @@ public class AdministradorController {
         } catch (SQLException sqlex){
             sqlex.printStackTrace();
         }
+    }
 
+    public ArrayList<Empleado> getEmpleados() {
+        return empleados;
+    }
+
+    public String toStringListaEmpleados(){
+        String result = "";
+        for (Empleado administrador: this.empleados) {
+            result += administrador.toString() + "\n";
+        }
+        return result;
     }
 }

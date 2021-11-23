@@ -1,12 +1,14 @@
 package App.empleados;
 
 public class Administrador extends Empleado {
+    private long ID;
     private static int instanciasAdministrador = 0;
     private double porcentajeCompensacion;
     private int level = 1;
 
-    public Administrador(String nombre, double numHorasTrabajadas) {
-        super(nombre, numHorasTrabajadas);
+    public Administrador(long ID, String nombre,String apellido, double numHorasTrabajadas) {
+        super(nombre, apellido, numHorasTrabajadas);
+        this.ID = ID;
         instanciasAdministrador++;
     }
 

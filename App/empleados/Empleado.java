@@ -2,12 +2,14 @@ package App.empleados;
 
 public abstract class Empleado implements Comparable<Empleado>{
     private String nombre;
+    private String apellido;
     private double salario;
     private double numHorasTrabajadas;
     private int level;
 
-    public Empleado(String nombre, double numHorasTrabajadas) {
+    public Empleado(String nombre, String apellido, double numHorasTrabajadas) {
         this.nombre = nombre;
+        this.apellido = apellido;
         this.numHorasTrabajadas = numHorasTrabajadas;
     }
 

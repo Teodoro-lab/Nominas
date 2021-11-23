@@ -3,6 +3,7 @@ package App.empleados;
 public class Jornalero extends Empleado {
     private static int instanciasJornalero = 0;
     private double horasExtrasTrabajadas;
+    // id's,
     private int level = 2;
 
     public Jornalero(String nombre, double numeroDeHorasTrabajadas, double horasExtrasTrabajadas) {

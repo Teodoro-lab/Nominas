@@ -1,8 +1,12 @@
 package App;
 
 import App.empleados.Administrador;
+import App.empleados.Empleado;
 import App.empleados.Jornalero;
+import App.resources.Connector;
+import App.resources.EmpleadoController;
 import App.resources.EmpleadosDB;
+import App.resources.NominaDBCRUD;
 import App.strategies.horasLaboradas.HorasLaboradasAdministradores;
 import App.strategies.horasLaboradas.HorasLaboradasEmpleados;
 import App.strategies.horasLaboradas.HorasLaboradasJornaleros;
@@ -10,13 +14,58 @@ import App.strategies.nominas.NominaAdministradores;
 import App.strategies.nominas.NominaEmpleados;
 import App.strategies.nominas.NominaJornaleros;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Connection;
 import java.util.Arrays;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
 
-        EmpleadosDB.add(new Administrador("María", 43));
+        /*Empleado empleado = new Administrador("María", 43);
+        EmpleadoController.addEmpleado(empleado);*/
+
+
+
+
+        /*Connector db = Connector.getConnector();
+        db.connect();
+        Connection con = db.getConnection();
+        Statement stmt = con.createStatement();
+
+        String query = "SELECT * FROM EMPLOYEES";
+        ResultSet result = stmt.executeQuery(query);*/
+
+        NominaDBCRUD nomina = new NominaDBCRUD();
+        ResultSet result = nomina.consultTable("employees");
+
+        String nombre;
+        String apellido;
+        int salario;
+        int horasLaboradas;
+        int level;
+
+        while(result.next())
+        {
+            nombre = result.getString("nombre");
+            apellido = result.getString("apellido");
+            salario = result.getInt("salario");
+            horasLaboradas = result.getInt("horasLaboradas");
+            level = result.getInt("level");
+            System.out.println( nombre + "\t" + apellido + "\t" + salario + "\t" + horasLaboradas + "\t" + level);
+        }
+
+        Connector.getConnector().close();
+
+
+
+
+
+
+
+        /*EmpleadosDB.add(new Administrador("María", 43));
         EmpleadosDB.add(new Jornalero("Juan", 17, 2));
         EmpleadosDB.add(new Jornalero("Jacinto", 32, 3));
         EmpleadosDB.add(new Administrador("Samuel", 52));
@@ -59,7 +108,7 @@ public class Main {
 
         System.out.println("---------- MY SORT -------------\n");
         EmpleadosDB.BubbleSort(true);
-        EmpleadosDB.show();
+        EmpleadosDB.show();*/
 
     }
 }
